@@ -1,0 +1,5 @@
+# Effective geometry versus schema validity
+
+Treat schema validity and preserved geometry fingerprints as necessary but insufficient export acceptance checks. A native Advance Steel WeldPoint can export as IfcFastener / Weld with a GeometricCurveSet polyline whose endpoints coincide. This remains schema-valid but cannot generate effective geometry even when IfcOpenShell dimensionality includes curves. Inspect native IFC items to distinguish exporter degeneracy from enrichment damage. Do not invent weld solids or mark such a package as successful solid geometry. Require nondegenerate geometry or an explicit supported semantic-only contract before publication, and retain a real fixture for the failure path.
+
+When launching Python subprocess test suites on Windows, pass sys.executable rather than the bare python command: PATH can resolve a different interpreter from the parent. Preserve initial failures but report corrected-interpreter results separately. Packaged onedir artifacts may exceed MAX_PATH and break broad pathlib.rglob scans even when targeted IFC reads use extended paths; report this as a validation blocker, not a clean lint result.
