@@ -61,6 +61,10 @@ D:\施工圖交付\專案名稱
 
 回報格式：一句結論 → 兩冊頁數表 → 做了什麼（換框、封面、多框拆頁、零件 byte identity）→「需要你確認的」編號清單 →「還沒驗證的」→ 其他說明（路徑、工具位置）→ 下一步。
 
+## 開源工具（detached DWG 路線）
+
+本 repo 的 `tools/delivery-pipeline` 是這條路線的可執行實作：`DeliveryTool.dll`（Core Console 指令 DTINSPECT/DTPROBE/DTAPPLY/DTCOVER/DTINDEX/DTPLOTALL/DTCHECKFRAME/DTPROJFILL/DTSETATTR/DTATTRREAD）＋ `asdeliver` Python 步驟（inventory → prepare → process → build_delivery → contacts → final_check），所有案別差異寫在 `project.json`。工具沒有可靠依據時會停下，不會自己猜（缺圖名、缺比例、工程實體超出圖框窗、多出的 REVISIONS）。遇到這些情況，依本 skill 第 10、15、18 條問使用者，再把決定寫進設定檔的 `exempt`／`offsheet`／`excluded`。不可為了讓工具通過就放寬列印窗。
+
 ## 前置條件與範圍
 
 - 載入 `autocad-automation`；PDF 合冊載入 `pdf`，桌面操作載入 `computer-use`。

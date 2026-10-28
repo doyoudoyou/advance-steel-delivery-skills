@@ -1,0 +1,51 @@
+{
+  "name": "範例案A",
+  "project_title": "範例工程／範例案A",
+  "root": "D:\\施工圖交付\\範例案A",
+  "batch": "b01",
+  "source_dir": "D:\\施工圖交付\\範例案A\\01_接收原檔\\b01",
+  "expected_source_count": null,
+  "accoreconsole": "C:\\Program Files\\Autodesk\\AutoCAD 2027\\accoreconsole.exe",
+  "dll": "C:/DeliveryTool/bin/DeliveryTool.dll",
+  "layout": "A3 Advance Steel",
+  "workers": 2,
+
+  "donor": {
+    "dwg": "D:\\templates\\frame-donor.dwg",
+    "title_text": "DONOR TITLE - 構件 A-1",
+    "scale_text": "比例：NTS",
+    "scale_prefix": "比例：",
+    "scale_fallback": "詳各視圖",
+    "number_pos": [275.2, 2.3, 1.7, 0.8],
+    "mark_pos": null,
+    "number_layer": "DT_DRAWING_NUMBER",
+    "bottom_band_y": 26.0
+  },
+  "page_window": {"left": -11, "right": 418, "bottom": -11, "top": 285, "info_band_bottom": 20.5, "max_shift": 40},
+
+  "standards": {
+    "dir": "D:\\templates\\standards",
+    "number": "ED-{:03d}",
+    "titles": ["{name} - 鋼結構標準圖(一)", "{name} - 鋼結構標準圖(二)"]
+  },
+  "cover": {"dwg": "D:\\templates\\cover.dwg", "replace_from": "COVER PROJECT NAME", "expect_count": 2,
+            "number": "AF-001", "title": "{name}鋼結構施工圖"},
+  "index": {"rows_per_page": 20, "number": "AL-{:03d}", "font": "kaiu.ttf"},
+
+  "categories": [
+    {"kind": "erection", "prefix": "[G]", "id_regex": " - (\\d+) \\(A3\\)", "number": "PA-{:03d}",
+     "title": "{name} - {title}", "titles": {"101": "平面圖", "102": "立面圖"}, "default_scale": "詳各視圖"},
+    {"kind": "assembly", "prefix": "[A]", "id_regex": " - (.+) \\(A3\\)", "number": "GA-{:03d}",
+     "title": "{name} - 構件 {id}"},
+    {"kind": "part", "prefix": "[S]", "id_regex": " - (.+) \\(A3\\)"}
+  ],
+
+  "revision_cleanup": null,
+  "parts": {"fill_project": false, "block": "HYPERSTEELPAGEHEADER", "tag": "PROJECT", "height": 2.5, "align_y": 18.5},
+  "exempt": [],
+  "offsheet": [],
+  "excluded": {},
+  "required_texts": [],
+  "forbidden_texts": [],
+  "notes_extra": []
+}

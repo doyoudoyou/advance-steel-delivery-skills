@@ -18,6 +18,13 @@ Most of the content is in Traditional Chinese (Taiwan). Some references are in E
 | `box-column-shop-drawing-annotation` | Annotation principles and native workflow for BOX column shop drawings. |
 | `step-model-portfolio-rendering` | Rendering STEP models for a website portfolio. |
 
+## Tools
+
+`tools/delivery-pipeline/` contains a runnable, config-driven implementation of the detached-DWG delivery
+workflow: a small AutoCAD .NET command DLL (C#, built from source) and Python steps for inventory, framing,
+native reopen checks, plotting, book assembly and ZIP verification. See its [README](tools/delivery-pipeline/README.md).
+You need AutoCAD/Advance Steel 2027 and your own frame donor DWG.
+
 ## Install (Hermes)
 
 Copy the skill folders into your skills directory, for example:
@@ -31,7 +38,7 @@ On Windows the default location is `%LOCALAPPDATA%\hermes\skills\autocad-automat
 
 ## Notes and limitations
 
-- **Anonymised.** Project names, client names, machine names and local paths were replaced with placeholders (`範例案A`–`E`, `範例案T`, `case-T`, `<USER_HOME>`, `<WORKSPACE>`, `<owner>`). Referenced scripts and tools (e.g. `AdvanceSteelTools`, `as-agent`, project `05_交付紀錄/scripts`) are **not** included in this repository. Treat them as descriptions of a working setup, not something you can run directly.
+- **Anonymised.** Project names, client names, machine names and local paths were replaced with placeholders (`範例案A`–`E`, `範例案T`, `case-T`, `<USER_HOME>`, `<WORKSPACE>`, `<owner>`). Except for `tools/delivery-pipeline`, the scripts and tools the skills mention (e.g. `AdvanceSteelTools`, `as-agent`, project `05_交付紀錄/scripts`) are **not** included. Treat those parts as descriptions of a working setup, not something you can run directly.
 - Written for Advance Steel 2025–2027 on Windows. Version-specific facts are marked where known.
 - The skills tell an agent to work on copies, verify with native reopen and plotting, and never overwrite source files or delete without approval. Read them before you let an agent change production drawings.
 - Not affiliated with or endorsed by Autodesk. Advance Steel and AutoCAD are trademarks of Autodesk, Inc.
