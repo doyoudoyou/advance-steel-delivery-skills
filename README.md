@@ -36,6 +36,26 @@ cp -r advance-steel-delivery-skills/skills/* ~/.hermes/skills/autocad-automation
 
 On Windows the default location is `%LOCALAPPDATA%\hermes\skills\autocad-automation\`.
 
+## Install (Claude Code)
+
+Claude Code reads the same `SKILL.md` format. Copy the skill folders into a skills directory:
+
+```bash
+git clone https://github.com/doyoudoyou/advance-steel-delivery-skills
+# all projects
+cp -r advance-steel-delivery-skills/skills/* ~/.claude/skills/
+# or one project only
+cp -r advance-steel-delivery-skills/skills/* <your-project>/.claude/skills/
+```
+
+On Windows the user-level location is `%USERPROFILE%\.claude\skills\`. Claude Code loads a skill when the task
+matches its `description`, or you can call one directly, e.g. `/advance-steel-frame-and-delivery`.
+
+The skills were written for Hermes and sometimes name Hermes tools (`skill_view`, `computer-use`,
+`browser_vault`). Claude Code does not have them and uses its own tools (Bash, Read, …) instead, so read those
+lines as intent. `tools/delivery-pipeline` is not installed by copying the skills. Build and configure it as its
+README describes.
+
 ## Notes and limitations
 
 - **Anonymised.** Project names, client names, machine names and local paths were replaced with placeholders (`範例案A`–`E`, `範例案T`, `case-T`, `<USER_HOME>`, `<WORKSPACE>`, `<owner>`). Except for `tools/delivery-pipeline`, the scripts and tools the skills mention (e.g. `AdvanceSteelTools`, `as-agent`, project `05_交付紀錄/scripts`) are **not** included. Treat those parts as descriptions of a working setup, not something you can run directly.
